@@ -25,7 +25,7 @@ def testSampleData(codeDir, inputSample, OutputSample):
             print(f"테스트 {i+1}: 통과")
             passed += 1
         else:
-            print(f"테스트 {i+1}: 실패\n  예상 출력: {expected_output}\n  실제 출력: {stdout}\n  오류: {stderr.decode()}")
+            print(f"테스트 {i+1}: 실패\n  예상 출력: {expected_output}\n  실제 출력: {stdout}\n  오류: {stderr.encode()}")
     print(f"\n총 {passed}/{total} 테스트 통과")
 
     if os.path.exists("test.exe"):

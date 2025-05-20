@@ -3,8 +3,10 @@
 using namespace std;
 
 int main() {
-    string s;
-    cin >> s;
-    cout << s+"??!";
+    string userid;
+    cin >> userid;
+    
+    cout << userid + "??!";
+
     return 0;
 }

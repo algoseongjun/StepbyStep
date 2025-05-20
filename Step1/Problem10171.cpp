@@ -3,9 +3,10 @@
 using namespace std;
 
 int main() {
-    cout << "\\    /\\" << endl;
-    cout << " )  ( ')" << endl;
-    cout << "(  /  )" << endl;
-    cout << " \\(__)|" << endl;
+    cout << "\\    /\\" << "\n";
+    cout << " )  ( ')" << "\n";
+    cout << "(  /  )" << "\n";
+    cout << " \\(__)|" << "\n";
+    
     return 0;
 }

@@ -6,7 +6,7 @@ using namespace std;
 void hanoi(int n, int base1, int base2, int base3) {
     if (n == 1) {cout << base1 << " " << base3 << "\n"; return;}
     else {
-        hanoi(n-1, base1, base2, base3);
+        hanoi(n-1, base1, base3, base2);
         cout << base1 << " " << base3 << "\n";
         hanoi(n-1, base2, base1, base3);
     }

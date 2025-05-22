@@ -17,15 +17,15 @@ def testSampleData(codeDir, inputSample, OutputSample):
     for i in range(total):
         input_data = inputSample[i]
         expected_output = OutputSample[i]
-        process = subprocess.Popen(['./test'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        process = subprocess.Popen(['./test.exe'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         stdout, stderr = process.communicate(input=input_data)
         stdout = stdout.strip()
-        expected_output = expected_output.strip()
+        expected_output = expected_output.strip().replace("\r", "")
         if stdout == expected_output:
             print(f"테스트 {i+1}: 통과")
             passed += 1
         else:
-            print(f"테스트 {i+1}: 실패\n  예상 출력: {expected_output}\n  실제 출력: {stdout}\n  오류: {stderr.encode()}")
+            print(f"테스트 {i+1}: 실패\n  예상 출력: \n{repr(expected_output)}\n  실제 출력: \n{repr(stdout)}\n  오류: {stderr.encode()}")
     print(f"\n총 {passed}/{total} 테스트 통과")
 
     if os.path.exists("test.exe"):
